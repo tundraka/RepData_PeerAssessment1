@@ -11,8 +11,7 @@ library(ggplot2)
 library(xtable)
 ```
 
-## Activity monitor analysis
-
+##Reproducible Research: Peer Assessment 1. Activity monitor analysis
 
 ## Loading and preprocessing the data
 The data to work with is included in this github project, the first step would
