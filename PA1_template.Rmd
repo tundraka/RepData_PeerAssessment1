@@ -36,8 +36,7 @@ ggplot(totalStepsByDay, aes(x=date, weight=total)) +
 ```
 
 We will also report the mean and median steps taken by day. We first ignore the
-entries with `NA` steps. I am making the dates as characters so they are
-displayed correctly in the table below. 
+entries with `NA` steps.
 
 ```{r meanstepsbyday}
 stepsByDay <- data[!is.na(steps),
@@ -45,12 +44,12 @@ stepsByDay <- data[!is.na(steps),
                      meanDay=mean(steps, na.rm=T),
                      medianDay=median(steps, na.rm=T)
                      ), .(date)]
-stepsByDay$date <- as.character(stepsByDay$date)
 ```
 
 Notice that some dates are missing, this is because there's no data in those days.
 
 ```{r tablemeanstepsbyday, results='asis', echo=F}
+stepsByDay$date <- as.character(stepsByDay$date)
 tableStepsByDay <- xtable(stepsByDay)
 print(tableStepsByDay, type='html', include.rownames=F)
 ```
